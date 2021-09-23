@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    config:
+      server:
+        aws:
+          region: eu-central-1
+          bucket: app-config-service-bucket
+        git:
+          uri: http://git.valcon/internal/valconscconfig.git
+          username: devconfig
+          password: devconfig
+          repos:
+            production:
+              pattern: '*/production'
+              uri: http://git.valcon/internal/invoicingconf.git
+              username: invconfig
+              password: invconfig2020
+        clone-on-start: true
+  security:
+    user:
+      name: icuser
+      password: icuser2020

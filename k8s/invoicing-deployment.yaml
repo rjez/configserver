@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: invoicing
+  name: invoicing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: invoicing
+  template:
+    metadata:
+      labels:
+        app: invoicing
+    spec:
+      containers:
+      - image: localhost:32000/invoicing:01
+        imagePullPolicy: Always
+        name: invoicing
+        ports:
+        - containerPort: 8080
+          name: invoicing
