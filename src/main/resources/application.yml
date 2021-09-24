@@ -20,5 +20,5 @@ spring:
         clone-on-start: true
   security:
     user:
-      name: icuser
-      password: icuser2020
+      name: ?
+      password: ?
